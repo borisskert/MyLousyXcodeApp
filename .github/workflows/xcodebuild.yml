@@ -1,0 +1,19 @@
+---
+name: Build app
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: macos-12
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Build
+        run: xcodebuild -configuration Release
